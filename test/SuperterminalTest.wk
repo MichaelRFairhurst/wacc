@@ -1,0 +1,28 @@
+import Asserts;
+import Superterminal;
+import Terminal;
+import Nonterminal;
+
+every SuperterminalTest is:
+
+	provides Terminal, Nonterminal, Text:Token <- "blah";
+
+	~[ test Terminal.isNonterminal() returns nothing ]~(Asserts) {
+		var Terminal from this;
+		Asserts.that(Terminal.isNonterminal() == nothing);
+	}
+
+	~[ test Terminal.isTerminal() returns itself ]~(Asserts) {
+		var Terminal from this;
+		Asserts.that(Terminal.isTerminal() == Terminal);
+	}
+
+	~[ test Nonterminal.isTerminal() returns nothing ]~(Asserts) {
+		var Nonterminal from this;
+		Asserts.that(Nonterminal.isTerminal() == nothing);
+	}
+
+	~[ test Nonterminal.isNonterminal() returns itself ]~(Asserts) {
+		var Nonterminal from this;
+		Asserts.that(Nonterminal.isNonterminal() == Nonterminal);
+	}

@@ -1,0 +1,28 @@
+every Superterminal is:
+
+	Nonterminal? -- isNonterminal();
+	Terminal? -- isTerminal();
+
+every Terminal (a Superterminal) is:
+
+	needs public Text:Token token;
+
+	Terminal? -- isTerminal() {
+		return this;
+	}
+
+	Nonterminal? -- isNonterminal() {
+		return nothing;
+	}
+
+every Nonterminal (a Superterminal) is:
+
+	with public Superterminal[] = [];
+
+	Nonterminal? -- isNonterminal() {
+		return this;
+	}
+
+	Terminal? -- isTerminal() {
+		return nothing;
+	}

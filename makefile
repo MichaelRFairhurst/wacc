@@ -1,7 +1,7 @@
 PROGRAM := your-program-name
 
 # set to false or it will be linked with a main()
-EXECUTABLE := true
+EXECUTABLE := false #for now
 
 # Include all wake libraries by default since there aren't many just yet
 LIBRARYFILES := $(wildcard lib/obj/*.o)
