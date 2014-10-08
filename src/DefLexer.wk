@@ -1,0 +1,12 @@
+import File;
+import DefToken;
+
+every DefLexer is:
+
+	needs File;
+
+	provides DefToken <- DefToken(?Text, ?Text);
+
+	DefToken -- next() {
+		return DefToken('hey', 'man') from this;
+	}

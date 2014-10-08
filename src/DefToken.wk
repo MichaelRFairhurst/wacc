@@ -1,0 +1,3 @@
+every DefToken is:
+
+	needs public Text name, public Text val;
